@@ -2,6 +2,11 @@ defmodule Clock.LEDAdapter.Test do
   defstruct pin: 0, lit: false, history: []
 
   require Logger
+  alias Clock.LEDAdapter
+
+  @behaviour LEDAdapter
+
+  @impl LEDAdapter
 
   def open(pin) do
     Logger.info("Opening #{pin}")
@@ -10,16 +15,19 @@ defmodule Clock.LEDAdapter.Test do
     |> off()
   end
 
+  @impl LEDAdapter
   def on(led) do
     Logger.info("On: #{inspect(led)}")
     %{led | lit: true, history: [:on | led.history]}
   end
 
+  @impl LEDAdapter
   def off(led) do
     Logger.info("Off: #{inspect(led)}")
     %{led | lit: false, history: [:off | led.history]}
   end
 
+  @impl LEDAdapter
   def toggle(led, true = _on), do: on(led)
   def toggle(led, false = _off), do: off(led)
 
