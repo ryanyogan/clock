@@ -7,7 +7,6 @@ defmodule Clock.LEDAdapter.Test do
   @behaviour LEDAdapter
 
   @impl LEDAdapter
-
   def open(pin) do
     Logger.info("Opening #{pin}")
 
