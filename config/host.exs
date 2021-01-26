@@ -8,5 +8,5 @@ adapter =
   end
 
 config :clock,
-  pins: %{1 => 1, 2 => 2, 3 => 3, 4 => 4, 5 => 5, 6 => 6},
+  pins: %{0 => 0, 1 => 1, 2 => 2, 3 => 3, 4 => 4, 5 => 5},
   led_adapter: adapter

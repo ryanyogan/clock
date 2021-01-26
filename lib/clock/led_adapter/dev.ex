@@ -24,8 +24,4 @@ defmodule Clock.LEDAdapter.Dev do
     Logger.info("Off: #{inspect(led)}")
     %{led | lit: false}
   end
-
-  @impl LEDAdapter
-  def toggle(led, true = _on), do: on(led)
-  def toggle(led, false = _off), do: off(led)
 end

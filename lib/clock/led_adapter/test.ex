@@ -26,9 +26,5 @@ defmodule Clock.LEDAdapter.Test do
     %{led | lit: false, history: [:off | led.history]}
   end
 
-  @impl LEDAdapter
-  def toggle(led, true = _on), do: on(led)
-  def toggle(led, false = _off), do: off(led)
-
   def history(led), do: Enum.reverse(led.history)
 end

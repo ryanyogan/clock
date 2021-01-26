@@ -21,8 +21,4 @@ defmodule Clock.LEDAdapter.Embed do
     GPIO.write(led, 0)
     led
   end
-
-  @impl LEDAdapter
-  def toggle(led, true = _on), do: on(led)
-  def toggle(led, false = _off), do: off(led)
 end
